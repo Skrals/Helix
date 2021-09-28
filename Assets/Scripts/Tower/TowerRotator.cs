@@ -20,7 +20,7 @@ public class TowerRotator : MonoBehaviour
             if(touch.phase == TouchPhase.Moved)
             {
                 float torque = touch.deltaPosition.x * Time.deltaTime * rotateSpeed;
-                rigidbody.AddTorque(Vector3.up * torque);
+                rigidbody.AddTorque(-Vector3.up * torque);
             }
         }
     }
