@@ -334,7 +334,6 @@ MonoBehaviour:
   finishPlatform: {fileID: 4028403270975802173, guid: f6d3c5bbe85d9864aba0500d8869d9e9, type: 3}
   platforms:
   - {fileID: 2235727390124589617, guid: f0795b1e9160d794bb9359328a3b1c1c, type: 3}
-  - {fileID: 2235727390124589617, guid: f0795b1e9160d794bb9359328a3b1c1c, type: 3}
 --- !u!4 &1631203273
 Transform:
   m_ObjectHideFlags: 0
