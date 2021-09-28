@@ -3,13 +3,14 @@ using UnityEngine;
 public class TowerBuilder : MonoBehaviour
 {
     [SerializeField] private int levelCount;
+    [SerializeField] private float additionalScale;
     [SerializeField] private GameObject basis;
     [SerializeField] private StartPlatform spawnPlatform;
     [SerializeField] private FinishPlatform finishPlatform;
     [SerializeField] private Platform[] platforms;
 
     private float adittionalScaleForStartAndFinish = 1f;
-    public float BeamScaleY => levelCount + adittionalScaleForStartAndFinish;
+    public float BeamScaleY => levelCount + adittionalScaleForStartAndFinish + additionalScale;
     void Start()
     {
         Build();
@@ -21,7 +22,7 @@ public class TowerBuilder : MonoBehaviour
         beam.transform.localScale = new Vector3(1.2f, BeamScaleY, 1.2f);
 
         Vector3 spawnPosition = beam.transform.position;
-        spawnPosition.y += beam.transform.localScale.y;
+        spawnPosition.y += beam.transform.localScale.y - additionalScale;
 
         SpawnPlatform(spawnPlatform, ref spawnPosition, Quaternion.Euler(0, Random.Range(0, 360), 0), beam.transform);
 
